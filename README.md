@@ -57,9 +57,9 @@ These features, described in detail below, play a pivotal role in unraveling val
 Objective: Prepare the dataset for analysis by importing it into an SQL database, understanding its structure, and cleaning it to address any data quality issues.
 
 Actions:
-   -	Import the dataset into an SQL database, ensuring compatibility.
-   -	Perform an initial data exploration to comprehend the dataset's structure, features, and data types.
-   -	Execute data cleaning processes to handle missing values, duplicates, and inconsistencies, ensuring data integrity.
+   -	Import the dataset into an SQL database, ensuring compatibility
+   -	Perform an initial data exploration to comprehend the dataset's structure, features, and data types
+   -	Execute data cleaning processes to handle missing values, duplicates, and inconsistencies, ensuring data integrity
 
 <b>Defining Business Questions:</b>
 
