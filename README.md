@@ -48,3 +48,53 @@ These features, described in detail below, play a pivotal role in unraveling val
 <b>Notes</b>: Additional comments or details about the vehicle that might not fit into the other categories.
 
 <b>Drivetrain</b>: The system responsible for transmitting power to the wheels, specifying if the vehicle is front-wheel drive, rear-wheel drive, all-wheel drive, etc.
+
+
+<h3>Project Plan</h3>
+
+<b>Data Exploration and Cleaning:</b>
+
+Objective: Prepare the dataset for analysis by importing it into an SQL database, understanding its structure, and cleaning it to address any data quality issues.
+
+Actions:
+   -	Import the dataset into an SQL database, ensuring compatibility.
+   -	Perform an initial data exploration to comprehend the dataset's structure, features, and data types.
+   -	Execute data cleaning processes to handle missing values, duplicates, and inconsistencies, ensuring data integrity.
+
+<b>Defining Business Questions:</b>
+
+Objective: Formulate relevant business questions to guide the analysis and provide valuable insights into the Electric and Alternative Fuel Vehicles (EV & AFV) market.
+
+Actions: Utilize knowledge of the dataset's columns to create a set of insightful questions, including but not limited to:
+- Distribution of EVs and AFVs by manufacturer and model year
+- Variation in all-electric range by manufacturer and model year
+- Correlation between alternative and conventional fuel economy
+- Impact of transmission types on fuel economy
+- Market share of heavy-duty AFVs
+- Trends in engine types and sizes for EVs and AFVs
+
+<b>SQL Queries and Data Analysis:</b>
+
+Objective: Extract and analyze data using SQL queries to answer the defined business questions, enabling data-driven insights.
+
+Actions:
+- Craft SQL queries tailored to extract the necessary information from the dataset
+- Utilize aggregation and data manipulation techniques to calculate average fuel economy, identify top manufacturers and models, and compare fuel economy between AFVs and conventional vehicles
+
+<b>Data Visualization with Tableau:</b>
+
+Objective: Visualize key findings and insights by connecting the SQL database to Tableau and creating interactive visualizations.
+
+Actions:
+- Establish a connection between the SQL database and Tableau for seamless data integration
+- Design and develop interactive visualizations that effectively represent the project's discoveries
+- Create comprehensive dashboards to provide a user-friendly overview of the EV and AFV market
+
+<b>Interpretation and Insights:</b>
+
+Objective: Analyze visualizations to extract meaningful insights from the data, and draw conclusions that address the initial business questions.
+
+Actions:
+- Thoroughly examine the visualizations to identify patterns, trends, and outliers
+- Formulate clear and concise insights based on the data analysis
+- Summarize key findings in a manner that directly addresses the project's initial business questions
