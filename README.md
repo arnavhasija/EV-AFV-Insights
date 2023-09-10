@@ -2,10 +2,14 @@
 In this project, I dive into the analysis of Electric and Alternative Fuel Vehicles using SQL queries and dynamic Tableau visualizations to uncover specifications, performance, and trends.
 
 <h3>Background</h3>
-The automotive industry is undergoing a significant transformation with an increasing focus on sustainability and reducing carbon emissions. Electric Vehicles (EVs) and Alternative Fuel Vehicles (AFVs) have gained significant attention as potential solutions to address these challenges. This project aims to analyze and visualize data on EVs and AFVs available in the market to gain insights into their specifications, performance, and trends. By leveraging SQL queries and Tableau visualizations, we will explore various aspects of these vehicles to uncover patterns and answer key business questions.
+The automotive industry is undergoing a significant transformation with an increasing focus on sustainability and reducing carbon emissions. Electric Vehicles (EVs) and Alternative Fuel Vehicles (AFVs) have gained significant attention as potential solutions to address these challenges. This project aims to analyze and visualize data on EVs and AFVs available in the market to gain insights into their specifications, performance, and trends. By leveraging SQL queries and Tableau visualizations, I will explore various aspects of these vehicles to uncover patterns and answer key business questions.
 
 <h3>Motivation</h3>
-The shift towards electric and alternative fuel vehicles has the potential to revolutionize the transportation sector, impacting manufacturers, consumers, and policymakers alike. This project is motivated by the need to understand the current landscape of EVs and AFVs in the market, identify factors influencing their adoption, and provide valuable insights for consumers, manufacturers, and policymakers. By analyzing this dataset, we aim to contribute to informed decision-making and foster a deeper understanding of the sustainable transportation options available.
+The shift towards electric and alternative fuel vehicles has the potential to revolutionize the transportation sector, impacting manufacturers, consumers, and policymakers alike. According to recent predictions from BIS Research, the global market for electric vehicle batteries is poised for remarkable expansion over eight years as shown in the figure below. In 2016, its value stood at $14.99 billion, and the forecast indicates a substantial leap to $93.94 billion by 2026, reflecting a robust Compound Annual Growth Rate (CAGR) of 20.1 percent. The primary drivers behind this growth are attributed to heightened collaboration among key component manufacturers and a growing number of Original Equipment Manufacturers (OEMs). Furthermore, the decreasing cost of batteries and the enhancement of charging infrastructure are anticipated to be pivotal factors propelling the electric vehicle battery market's expansion.
+
+![](/images/img1.jpg)
+
+This project is motivated by the need to understand the current landscape of EVs and AFVs in the market, identify factors influencing their adoption, and provide valuable insights for consumers, manufacturers, and policymakers. By analyzing this dataset, I aim to contribute to informed decision-making and foster a deeper understanding of the sustainable transportation options available.
 
 <h3>Dataset</h3>
 
