@@ -61,7 +61,7 @@ ORDER BY
     AvgElectricRange DESC;  -- Sort by average electric range in descending order
     
 
--- Fuel Economy Analysis --
+-- Fuel Economy Analysis for Conventional Vehicles --
 
 -- Calculate and compare the average conventional fuel economy combined for different vehicle manufacturers.
 SELECT
@@ -89,11 +89,52 @@ ORDER BY
     AvgFuelEconomy DESC;   -- Sort the results by average fuel economy in descending order
 
 
-
 -- Now calculating and comparing the average conventional fuel economy combined for different fuel types
 SELECT
     Fuel, 
     AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
+FROM
+    afvus                          
+WHERE
+    Fuel IS NOT NULL -- Exclude records with NULL fuel type
+GROUP BY
+    Fuel   -- Group the results by 'Fuel'
+ORDER BY
+    AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
+    
+-- Fuel Economy Analysis for Alternative Fuel Vehicles --
+
+
+-- Calculate and compare the average alternative fuel economy combined for different vehicle manufacturers.
+SELECT
+    Manufacturer,   
+    AVG(`AlternativeFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
+FROM
+    afvus                          
+GROUP BY
+    Manufacturer  -- Group the results by 'Manufacturer'
+ORDER BY
+    AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
+
+
+-- Calculate and compare the average alternative fuel economy combined for different vehicle categories
+SELECT
+    Category, 
+    AVG(`AlternativeFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
+FROM
+    afvus  
+WHERE
+    Category IS NOT NULL  -- Exclude records with NULL category
+GROUP BY
+    Category   -- Group the results by 'Category'
+ORDER BY
+    AvgFuelEconomy DESC;   -- Sort the results by average fuel economy in descending order
+    
+
+-- Now calculating and comparing the average alternative fuel economy combined for different fuel types
+SELECT
+    Fuel, 
+    AVG(`AlternativeFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
 FROM
     afvus                          
 WHERE
