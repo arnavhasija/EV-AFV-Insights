@@ -43,36 +43,33 @@ GROUP BY
     Fuel                    -- Group the results by the 'Fuel' column
 ORDER BY
     Frequency DESC;         -- Sort the results by frequency in descending order
-
-
--- Next, checking how  the all-electric range of EVs varies by manufacturer and model year
-SELECT
-    Manufacturer,
-    ModelYear,
-    AVG(`All-ElectricRange`) AS AvgElectricRange
-FROM
-    afvus
-WHERE
-     Fuel IN ('Electric')  -- Filter for Electric Vehicles (EV)
-GROUP BY
-    Manufacturer,
-    ModelYear
-ORDER BY
-    AvgElectricRange DESC;  -- Sort by average electric range in descending order
     
 
 -- Fuel Economy Analysis for Conventional Vehicles --
 
+
 -- Calculate and compare the average conventional fuel economy combined for different vehicle manufacturers.
+
+WITH RankedManufacturers AS (
+    SELECT
+        Manufacturer,
+        AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy
+    FROM
+        afvus
+    WHERE
+        `ConventionalFuelEconomyCombined` IS NOT NULL
+    GROUP BY
+        Manufacturer
+)
 SELECT
-    Manufacturer,   
-    AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
+    Manufacturer,
+    AvgFuelEconomy,
+    RANK() OVER (ORDER BY AvgFuelEconomy DESC) AS rank_
 FROM
-    afvus                          
-GROUP BY
-    Manufacturer  -- Group the results by 'Manufacturer'
+    RankedManufacturers
 ORDER BY
-    AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
+    rank_;
+
 
 
 -- Calculate and compare the average conventional fuel economy combined for different vehicle categories
@@ -143,3 +140,67 @@ GROUP BY
     Fuel   -- Group the results by 'Fuel'
 ORDER BY
     AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
+
+
+-- Next, checking how  the all-electric range of EVs varies by manufacturer and model year
+SELECT
+    Manufacturer,
+    ModelYear,
+    AVG(`All-ElectricRange`) AS AvgElectricRange
+FROM
+    afvus
+WHERE
+     Fuel IN ('Electric')  -- Filter for Electric Vehicles (EV)
+GROUP BY
+    Manufacturer,
+    ModelYear
+ORDER BY
+    AvgElectricRange DESC;  -- Sort by average electric range in descending order
+    
+-- checking how  the all-electric range of EVs varies by the category (sedan/SUV/pickup)
+SELECT
+    Category,
+    AVG(`All-ElectricRange`) AS AvgElectricRange
+FROM
+    afvus
+WHERE
+     Fuel IN ('Electric')  -- Filter for Electric Vehicles (EV)
+GROUP BY
+    Category
+ORDER BY
+    AvgElectricRange DESC;  -- Sort by average electric range in descending order
+
+
+-- Calculate average and standard deviation of All-ElectricRange for each manufacturer.
+-- Identify and label rows as outliers based on the specified criteria.
+
+-- Common Table Expression (CTE) to calculate statistics by manufacturer
+
+-- Calculate average and standard deviation of All-ElectricRange for each manufacturer.
+-- Identify and label rows as outliers based on the specified criteria.
+WITH ElectricRangeOutliers AS (
+    SELECT
+        *,
+        -- Calculate the average (mean) All-ElectricRange for each manufacturer
+        AVG(`All-ElectricRange`) OVER (PARTITION BY Manufacturer) AS AvgRange,
+        -- Calculate the standard deviation of All-ElectricRange for each manufacturer
+        STDDEV_SAMP(`All-ElectricRange`) OVER (PARTITION BY Manufacturer) AS StdDevRange
+    FROM
+        afvus
+    WHERE
+        `All-ElectricRange` IS NOT NULL
+)
+
+-- Main query to label and filter outliers
+SELECT
+    *
+FROM
+    ElectricRangeOutliers
+WHERE
+    (
+        `All-ElectricRange` < AvgRange - 2 * StdDevRange
+        OR `All-ElectricRange` > AvgRange + 2 * StdDevRange
+    )
+    AND (
+        `All-ElectricRange` IS NOT NULL
+    );
