@@ -16,18 +16,16 @@ AND ORDINAL_POSITION = 1;
 ALTER TABLE afvus
 RENAME COLUMN ï»¿Category TO Category;
 
--- First looking at the distribution of EVs by manufacturer and model year
+-- First looking at the distribution of cars by manufacturer
 SELECT
     Manufacturer,
-    ModelYear,
     COUNT(*) AS VehicleCount
 FROM
     afvus
 WHERE
     Fuel IN ('Electric')  -- Filter for Electric Vehicles (EV)
 GROUP BY
-    Manufacturer,
-    ModelYear
+    Manufacturer
 ORDER BY
     VehicleCount DESC;  -- Sort by number of vehicles  in descending order
     
@@ -50,25 +48,17 @@ ORDER BY
 
 -- Calculate and compare the average conventional fuel economy combined for different vehicle manufacturers.
 
-WITH RankedManufacturers AS (
-    SELECT
-        Manufacturer,
-        AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy
+SELECT
+	Manufacturer,
+	AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy
     FROM
         afvus
     WHERE
         `ConventionalFuelEconomyCombined` IS NOT NULL
     GROUP BY
         Manufacturer
-)
-SELECT
-    Manufacturer,
-    AvgFuelEconomy,
-    RANK() OVER (ORDER BY AvgFuelEconomy DESC) AS rank_
-FROM
-    RankedManufacturers
-ORDER BY
-    rank_;
+	ORDER BY
+		AvgFuelEconomy DESC;
 
 
 
