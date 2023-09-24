@@ -112,6 +112,8 @@ Actions:
 
 <h3>Key Findings and Insights</h3>
 
+<b>Distribution by Manufacturers and Fuel Type</b>
+
 In my analysis of the dataset, I uncovered intriguing insights regarding the distribution of electric and alternative fuel vehicles (AFVs) across manufacturers and fuel types in the United States as shown in the chart below.
 
 ![](/images/img5.jpg)
@@ -123,3 +125,13 @@ Hybrid Electric vehicles emerged as the dominant choice among manufacturers, ind
 Among the manufacturers, Land Rover offers 26 Hybrid Electric vehicles, while GMC specializes in Biodiesel with 30 vehicles. Chevrolet boasts a presence in the Electric vehicle category with 38 offerings, while Tesla follows closely with 24 Electric vehicles. 
 
 The dataset reveals a wide range of manufacturers, including both well-established automakers like Ford and Audi. It underscores the growth of the electric vehicle market, with Chevrolet and Tesla leading the way in fully electric options. Furthermore, manufacturers cater to a diverse range of consumer preferences, offering vehicles powered by propane, CNG, LNG, and biodiesel. This analysis provides valuable insights into the diversity of electric and AFVs available in the U.S. market, reflecting the collective efforts of automakers in advancing sustainable transportation options.
+
+<b>Distribution by Vehicle Category and Fuel Type</b>
+
+The chart below unveils an interesting picture of the distribution of EVs and AFVs across different vehicle categories. It's evident that Hybrid Electric Sedans/Wagons take the lead, with a substantial count of 284 units. Electric Sedans/Wagons closely follow, with 246 vehicles.
+
+![](/images/img6.jpg)
+
+Plug-in Hybrid Electric Sedans/Wagons, while fewer in number, still show a noteworthy presence at 95 units. Moving beyond the sedan/wagon category, we see diversification in the types of AFVs being adopted. Biodiesel (B20) vehicles emerge as a popular choice for SUVs, with 68 units, reflecting a preference for this alternative fuel in larger vehicles. CNG (Compressed Natural Gas) and Ethanol (E85) vehicles find their niche in the Pickup category, with 44 and 43 units respectively. Notably, AFVs also make their mark in specialized sectors, with CNG/LNG vehicles used in Refuse (22 units) and Diesel/Hybrid Electric vehicles employed in Transit Buses (17 units).
+
+Further illustrating the versatility of AFVs, we observe LNG/CNG vehicles deployed in Street Sweepers (15 units) and Hydrogen Fuel Cell SUVs gaining traction with 14 units. This distribution of alternative fuel vehicles across various vehicle types highlights the growing diversity in sustainable transportation options and the adaptation of AFVs to a range of specific use cases.
