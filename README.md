@@ -109,3 +109,17 @@ Actions:
 - Thoroughly examine the visualizations to identify patterns, trends, and outliers
 - Formulate clear and concise insights based on the data analysis
 - Summarize key findings in a manner that directly addresses the project's initial business questions
+
+<h3>Key Findings and Insights</h3>
+
+In my analysis of the dataset, I uncovered intriguing insights regarding the distribution of electric and alternative fuel vehicles (AFVs) across manufacturers and fuel types in the United States as shown in the chart below.
+
+![](/images/img5.jpg)
+
+Ford stands out as the top manufacturer in the dataset, offering 107 Hybrid Electric vehicles, closely followed by Audi with 65 Hybrid Electric vehicles, and Mercedes-Benz with 58 Hybrid Electric vehicles.
+
+Hybrid Electric vehicles emerged as the dominant choice among manufacturers, indicating their popularity in the U.S. market. Notable manufacturers like BMW, Chevrolet, Porsche, and Tesla also contribute to the dataset with Plug-in Hybrid Electric and Electric vehicles. Additionally, GMC is among the manufacturers offering Biodiesel (B20) vehicles, showcasing the diversity of fuel options.
+
+Among the manufacturers, Land Rover offers 26 Hybrid Electric vehicles, while GMC specializes in Biodiesel with 30 vehicles. Chevrolet boasts a presence in the Electric vehicle category with 38 offerings, while Tesla follows closely with 24 Electric vehicles. 
+
+The dataset reveals a wide range of manufacturers, including both well-established automakers like Ford and Audi. It underscores the growth of the electric vehicle market, with Chevrolet and Tesla leading the way in fully electric options. Furthermore, manufacturers cater to a diverse range of consumer preferences, offering vehicles powered by propane, CNG, LNG, and biodiesel. This analysis provides valuable insights into the diversity of electric and AFVs available in the U.S. market, reflecting the collective efforts of automakers in advancing sustainable transportation options.
