@@ -135,3 +135,23 @@ The chart below unveils an interesting picture of the distribution of EVs and AF
 Plug-in Hybrid Electric Sedans/Wagons, while fewer in number, still show a noteworthy presence at 95 units. Moving beyond the sedan/wagon category, we see diversification in the types of AFVs being adopted. Biodiesel (B20) vehicles emerge as a popular choice for SUVs, with 68 units, reflecting a preference for this alternative fuel in larger vehicles. CNG (Compressed Natural Gas) and Ethanol (E85) vehicles find their niche in the Pickup category, with 44 and 43 units respectively. Notably, AFVs also make their mark in specialized sectors, with CNG/LNG vehicles used in Refuse (22 units) and Diesel/Hybrid Electric vehicles employed in Transit Buses (17 units).
 
 Further illustrating the versatility of AFVs, we observe LNG/CNG vehicles deployed in Street Sweepers (15 units) and Hydrogen Fuel Cell SUVs gaining traction with 14 units. This distribution of alternative fuel vehicles across various vehicle types highlights the growing diversity in sustainable transportation options and the adaptation of AFVs to a range of specific use cases.
+
+<b>Boxplot: Electric Range Distribution by Manufacturer</b>
+
+The boxplot below provides an overview of the all-electric range distribution for various manufacturers, shedding light on the performance and diversity within the electric vehicle (EV) market. It unveils intriguing insights into the capabilities and offerings of different manufacturers, highlighting key trends and outliers.
+
+![](/images/img7.jpg)
+
+- Standing out as the top performer in terms of all-electric range, Tesla boasts a median range of 331.5 miles. The boxplot indicates a relatively tight range distribution, with the lower quartile (Q1) at 303 miles and the upper quartile (Q3) at 353 miles. This narrow spread underscores Tesla's reputation for offering EVs with consistently impressive ranges.
+
+- Following closely behind, Ford exhibits a median all-electric range of 270 miles. Similar to Tesla, Ford's range distribution displays a relatively compact spread, with Q1 at 230 miles and Q3 at 301.5 miles. This suggests that Ford's EV lineup provides a reliable and competitive range.
+
+- Volkswagen, primarily focused on electric vehicles in the dataset, showcases a median all-electric range of 250 miles. The distribution is compact, with Q1 at 249 miles and Q3 at 260 miles. This indicates a consistent range among Volkswagen's EV offerings.
+
+- Audi and Hyundai also make notable appearances in the dataset. However, these manufacturers demonstrate wider range distributions due to their inclusion of plug-in hybrid electric vehicles (PHEVs). Audi exhibits a median of 212 miles, while Hyundai has a median of 195 miles. The broader spread is influenced by PHEVs, such as Audi's model with a PHEV range of up to 410 miles and Hyundai's Ioniq Plug-in Hybrid boasting an impressive PHEV range of 620 miles.
+
+- Manufacturers like BMW, Porsche, and Volvo exhibit diverse range distributions. BMW's range spread is amplified as over 80% of their vehicles are Plug-in Hybrid Electric or Hybrid Electric, including the iX xDrive50 with a 324-mile all-electric range. Porsche showcases an even split between all-electric and PHEV vehicles. While their electric models have a slightly lower range, their PHEV vehicles, like the Panamera 4S E-Hybrid Executive, can reach up to 480 miles.
+
+- Lastly, Volvo's lower placement in the all-electric range hierarchy can be attributed to the dominance of plug-in hybrid electric vehicles, constituting 80% of their dataset entries. Notably, the C40 Recharge Twin model exhibits an outlier with an all-electric range of 226 miles. Most data points within the interquartile range belong to plug-in hybrid electric vehicles, with examples like the XC60 T8 AWD Recharge ext. Range SUV boasting ranges of up to 560 miles.
+
+The boxplots not only showcase the all-electric range diversity among manufacturers but also underscore the impact of plug-in hybrid electric vehicles on the overall range distribution. It offers a comprehensive visual representation of the EV landscape, enabling us to identify outliers, trends, and the varying approaches taken by manufacturers in the pursuit of sustainable mobility.
