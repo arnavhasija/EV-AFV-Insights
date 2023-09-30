@@ -16,14 +16,14 @@ AND ORDINAL_POSITION = 1;
 ALTER TABLE afvus
 RENAME COLUMN ï»¿Category TO Category;
 
+
 -- First looking at the distribution of cars by manufacturer
 SELECT
     Manufacturer,
+    Fuel,
     COUNT(*) AS VehicleCount
 FROM
     afvus
-WHERE
-    Fuel IN ('Electric')  -- Filter for Electric Vehicles (EV)
 GROUP BY
     Manufacturer
 ORDER BY
@@ -33,7 +33,8 @@ ORDER BY
 -- Now calculating the frequency of cars categorized by their fuel type and presenting the results
 -- in descending order of frequency. This would provide insights into which fuel types are most prevalent in the dataset.
 SELECT
-    Fuel,                   
+    Fuel,
+    Category,
     COUNT(*) AS Frequency  -- Count the occurrences of each fuel type and name the result column 'Frequency'
 FROM
     afvus           
@@ -41,6 +42,8 @@ GROUP BY
     Fuel                    -- Group the results by the 'Fuel' column
 ORDER BY
     Frequency DESC;         -- Sort the results by frequency in descending order
+    
+    
     
 
 -- Fuel Economy Analysis for Conventional Vehicles --
@@ -59,7 +62,6 @@ SELECT
         Manufacturer
 	ORDER BY
 		AvgFuelEconomy DESC;
-
 
 
 -- Calculate and compare the average conventional fuel economy combined for different vehicle categories
