@@ -97,13 +97,83 @@ ORDER BY
 -- Calculate and compare the average alternative fuel economy combined for different vehicle manufacturers.
 SELECT
     Manufacturer,   
-    AVG(`AlternativeFuelEconomyCombined`) AS AvgFuelEconomy  -- Calculate the average fuel economy
+    AVG(`AlternativeFuelEconomyCombined`) AS AvgAlternativeFuelEconomy  -- Calculate the average fuel economy
 FROM
-    afvus                          
+    afvus
+WHERE
+AlternativeFuelEconomyCombined != 0
 GROUP BY
     Manufacturer  -- Group the results by 'Manufacturer'
 ORDER BY
-    AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
+    AvgAlternativeFuelEconomy DESC; -- Sort the results by average fuel economy in descending order
+
+
+-- Calculate the average alternative fuel economy by manufacturer
+WITH AlternativeFuelEconomy AS (
+    SELECT
+        Manufacturer,
+        AVG(`AlternativeFuelEconomyCombined`) AS AvgAlternativeFuelEconomy
+    FROM
+        afvus
+    WHERE
+        AlternativeFuelEconomyCombined != 0
+    GROUP BY
+        Manufacturer
+),
+
+-- Calculate the average conventional fuel economy by manufacturer
+ConventionalFuelEconomy AS (
+    SELECT
+        Manufacturer,
+        AVG(`ConventionalFuelEconomyCombined`) AS AvgConventionalFuelEconomy
+    FROM
+        afvus
+    WHERE
+        ConventionalFuelEconomyCombined != 0
+    GROUP BY
+        Manufacturer
+)
+
+-- Combine the results from both subqueries
+SELECT
+    Manufacturer,
+    AVG(AvgAlternativeFuelEconomy) AS AvgAlternativeFuelEconomy,
+    AVG(AvgConventionalFuelEconomy) AS AvgConventionalFuelEconomy
+FROM (
+    -- Subquery 1: Average alternative fuel economy with NULL for conventional
+    SELECT
+        Manufacturer,
+        AVG(`AlternativeFuelEconomyCombined`) AS AvgAlternativeFuelEconomy,
+        NULL AS AvgConventionalFuelEconomy
+    FROM
+        afvus
+    WHERE
+        AlternativeFuelEconomyCombined != 0
+    GROUP BY
+        Manufacturer
+
+    UNION ALL  -- Combine the results of subquery 1 and subquery 2
+
+    -- Subquery 2: Average conventional fuel economy with NULL for alternative
+    SELECT
+        Manufacturer,
+        NULL AS AvgAlternativeFuelEconomy,
+        AVG(`ConventionalFuelEconomyCombined`) AS AvgConventionalFuelEconomy
+    FROM
+        afvus
+    WHERE
+        ConventionalFuelEconomyCombined != 0
+    GROUP BY
+        Manufacturer
+) AS CombinedData
+GROUP BY
+    Manufacturer  -- Group the combined data by manufacturer
+
+-- Order the results by the average fuel economy, handling NULL values
+ORDER BY
+    COALESCE(AvgAlternativeFuelEconomy, AvgConventionalFuelEconomy) DESC;
+
+
 
 
 -- Calculate and compare the average alternative fuel economy combined for different vehicle categories
