@@ -155,3 +155,26 @@ The boxplot below provides an overview of the all-electric range distribution fo
 - Lastly, Volvo's lower placement in the all-electric range hierarchy can be attributed to the dominance of plug-in hybrid electric vehicles, constituting 80% of their dataset entries. Notably, the C40 Recharge Twin model exhibits an outlier with an all-electric range of 226 miles. Most data points within the interquartile range belong to plug-in hybrid electric vehicles, with examples like the XC60 T8 AWD Recharge ext. Range SUV boasting ranges of up to 560 miles.
 
 The boxplots not only showcase the all-electric range diversity among manufacturers but also underscore the impact of plug-in hybrid electric vehicles on the overall range distribution. It offers a comprehensive visual representation of the EV landscape, enabling us to identify outliers, trends, and the varying approaches taken by manufacturers in the pursuit of sustainable mobility.
+
+
+<b>Alternative vs Conventional - Fuel Economy Analysis</b>
+
+In the visualization below, I explored the fuel economy of various automobile manufacturers, focusing on both Alternative Fuel Economy and Conventional Fuel Economy. The data is represented using a dumbbell plot, which provides an informative way to understand the differences and similarities between these two fuel economy metrics for each manufacturer.
+
+![](/images/img8.jpg)
+
+Below is a summary of the findings from this analysis.
+
+<b>Luxury Brands Emphasize Performance</b>: Luxury brands such as Mercedes-Benz, Lexus, BMW, and Porsche, known for their high-performance vehicles, tend to prioritize conventional fuel economy over alternative fuel economy. While their AFE values are competitive, they shine in CFE, indicating that luxury doesn't necessarily compromise efficiency.
+
+<b>Hyundai's Balanced Approach</b>: Hyundai stands out for its balanced approach. While the AFE of approximately 95 mpg is respectable, it's complemented by a solid CFE of around 46 mpg. This suggests that Hyundai offers a wide range of vehicles, including efficient conventional options.
+
+<b>Variability in the Middle</b>: Several manufacturers, including Audi, Polestar Automotive USA, and Volvo, fall in the middle range. They offer a mix of alternative and conventional fuel-efficient vehicles, reflecting the diversity in their lineups.
+
+<b>Ford's Interesting Position</b>: Ford showcases a unique position with an AFE of about 53 mpg and a CFE of approximately 25 mpg. This indicates a focus on offering a balance between alternative and conventional fuel-efficient options, making it an appealing choice for a wide range of consumers.
+
+<b>Tesla's Continued Dominance</b>: Tesla continues to lead the pack with an AFE of around 116 mpg, reflecting its commitment to electric vehicle innovation. While other manufacturers are catching up, Tesla's position remains strong in the alternative fuel economy segment.
+
+<b>Sports Cars vs. Efficiency</b>: Manufacturers like Ferrari and Porsche, known for their high-performance sports cars, have lower AFE values, around 49 mpg and 61 mpg, respectively. This emphasizes the trade-off between sports car performance and fuel efficiency.
+
+These insights underline the nuanced strategies that manufacturers employ to cater to a diverse consumer base. It showcases not only the leaders in sustainable mobility but also the diversity of approaches within the automotive industry, where luxury, performance, and efficiency intersect. Luxury brands find a balance between luxury and efficiency, while others prioritize innovation, performance, or a mix of all. It's clear that manufacturers are adapting to evolving consumer preferences, with an increasing emphasis on sustainability and fuel efficiency across the automotive industry.
