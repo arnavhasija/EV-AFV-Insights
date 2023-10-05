@@ -297,3 +297,49 @@ ORDER BY
     Manufacturer,
     Vehicle_Category,
     Avg_Engine_Size DESC;
+   
+
+/*
+   Next, performing a variance analysis to compare the fuel economy (miles per gallon) of Alternative Fuel Vehicles (AFVs) and Conventional Fuel Vehicles (CFVs) in both city and highway driving conditions. 
+   The goal is to assess whether AFVs exhibit different patterns in fuel economy between city and highway driving, 
+   and to gain insights into their efficiency in these scenarios.
+
+   Query Explanation:
+   - I calculate the average fuel economy for AFVs and CFVs separately for city and highway driving conditions.
+   - I use the 'CASE' statement to categorize each row as either 'City' or 'Highway' for easy comparison.
+   - The results will allow me to understand any disparities in fuel economy between AFVs and CFVs in various driving scenarios.
+*/   
+   
+-- Calculate variance for Alternative Fuel vehicles by Category
+SELECT
+    Category,
+    'Alternative' AS FuelType,
+    AVG(AlternativeFuelEconomyHighway) AS AvgHighway,
+    AVG(AlternativeFuelEconomyCity) AS AvgCity,
+    (AVG(AlternativeFuelEconomyHighway) - AVG(AlternativeFuelEconomyCity)) AS Variance
+FROM
+    afvus
+WHERE
+	AlternativeFuelEconomyHighway IS NOT NULL
+    AND AlternativeFuelEconomyCity IS NOT NULL 
+    AND Category IN ('Sedan/Wagon','SUV','Pickup','Van', 'Passenger Van/Shuttle Bus')
+GROUP BY
+    Category
+
+UNION ALL
+
+-- Calculate variance for Conventional Fuel vehicles by Category
+SELECT
+    Category,
+    'Conventional' AS FuelType,
+    AVG(ConventionalFuelEconomyHighway) AS AvgHighway,
+    AVG(ConventionalFuelEconomyCity) AS AvgCity,
+    (AVG(ConventionalFuelEconomyHighway) - AVG(ConventionalFuelEconomyCity)) AS Variance
+FROM
+    afvus
+WHERE
+	ConventionalFuelEconomyHighway IS NOT NULL
+    AND ConventionalFuelEconomyCity IS NOT NULL
+    AND Category IN ('Sedan/Wagon','SUV','Pickup','Van', 'Passenger Van/Shuttle Bus')
+GROUP BY
+    Category;
