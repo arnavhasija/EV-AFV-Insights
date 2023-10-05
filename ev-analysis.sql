@@ -266,3 +266,34 @@ WHERE
     AND (
         `All-ElectricRange` IS NOT NULL
     );
+    
+-- Next, analyzing how engine types and sizes vary for alternative fuel (AFV) vehicles within each manufacturer's lineup 
+-- and across different vehicle categories. This can help identify any patterns or differences in engine specifications 
+-- among the top manufacturers.    
+    
+-- Select and categorize vehicles as either EV or AFV based on their fuel type
+SELECT
+    Fuel,
+    Manufacturer,
+    Category AS Vehicle_Category,
+    EngineType AS Engine_Type,
+    AVG(EngineSize) AS Avg_Engine_Size
+FROM
+    afvus
+-- Filter the data to include specific fuel types (adjust as needed)
+WHERE
+    Fuel NOT IN ('Electric')
+    -- Filter the data to include only vehicles from top manufacturers (adjust the list as needed)
+    AND Manufacturer IN ('Tesla', 'Audi', 'Ford', 'BMW', 'Mercedes-Benz')
+    AND EngineSize != 0
+-- Group the data by vehicle type, manufacturer, vehicle category, and engine type
+GROUP BY
+	Fuel,
+    Manufacturer,
+    Vehicle_Category,
+    Engine_Type
+-- Order the results by vehicle type, manufacturer, vehicle category, and average engine size in descending order
+ORDER BY
+    Manufacturer,
+    Vehicle_Category,
+    Avg_Engine_Size DESC;
