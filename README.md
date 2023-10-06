@@ -110,9 +110,7 @@ Actions:
 - Formulate clear and concise insights based on the data analysis
 - Summarize key findings in a manner that directly addresses the project's initial business questions
 
-<h3>Key Findings and Insights</h3>
-
-<b>Distribution by Manufacturers and Fuel Type</b>
+<h3>Key Findings - Distribution by Manufacturers and Fuel Type</h3>
 
 In my analysis of the dataset, I uncovered intriguing insights regarding the distribution of electric and alternative fuel vehicles (AFVs) across manufacturers and fuel types in the United States as shown in the chart below.
 
@@ -126,7 +124,7 @@ Among the manufacturers, Land Rover offers 26 Hybrid Electric vehicles, while GM
 
 The dataset reveals a wide range of manufacturers, including both well-established automakers like Ford and Audi. It underscores the growth of the electric vehicle market, with Chevrolet and Tesla leading the way in fully electric options. Furthermore, manufacturers cater to a diverse range of consumer preferences, offering vehicles powered by propane, CNG, LNG, and biodiesel. This analysis provides valuable insights into the diversity of electric and AFVs available in the U.S. market, reflecting the collective efforts of automakers in advancing sustainable transportation options.
 
-<b>Distribution by Vehicle Category and Fuel Type</b>
+<h3>Distribution by Vehicle Category and Fuel Type</h3>
 
 The chart below unveils an interesting picture of the distribution of EVs and AFVs across different vehicle categories. It's evident that Hybrid Electric Sedans/Wagons take the lead, with a substantial count of 284 units. Electric Sedans/Wagons closely follow, with 246 vehicles.
 
@@ -157,7 +155,7 @@ The boxplot below provides an overview of the all-electric range distribution fo
 The boxplots not only showcase the all-electric range diversity among manufacturers but also underscore the impact of plug-in hybrid electric vehicles on the overall range distribution. It offers a comprehensive visual representation of the EV landscape, enabling us to identify outliers, trends, and the varying approaches taken by manufacturers in the pursuit of sustainable mobility.
 
 
-<b>Alternative vs Conventional - Fuel Economy Analysis</b>
+<h3>Alternative vs Conventional - Fuel Economy Analysis</h3>
 
 In the visualization below, I explored the fuel economy of various automobile manufacturers, focusing on both Alternative Fuel Economy and Conventional Fuel Economy. The data is represented using a dumbbell plot, which provides an informative way to understand the differences and similarities between these two fuel economy metrics for each manufacturer.
 
@@ -178,3 +176,19 @@ Below is a summary of the findings from this analysis.
 <b>Sports Cars vs. Efficiency</b>: Manufacturers like Ferrari and Porsche, known for their high-performance sports cars, have lower AFE values, around 49 mpg and 61 mpg, respectively. This emphasizes the trade-off between sports car performance and fuel efficiency.
 
 These insights underline the nuanced strategies that manufacturers employ to cater to a diverse consumer base. It showcases not only the leaders in sustainable mobility but also the diversity of approaches within the automotive industry, where luxury, performance, and efficiency intersect. Luxury brands find a balance between luxury and efficiency, while others prioritize innovation, performance, or a mix of all. It's clear that manufacturers are adapting to evolving consumer preferences, with an increasing emphasis on sustainability and fuel efficiency across the automotive industry.
+
+<h3>Analyzing Fuel Economy Variance: AFVs vs. Conventional Vehicles</h3>
+
+In this analysis, I aimed to explore the fuel economy performance of Alternative Fuel Vehicles (AFVs) compared to Conventional Vehicles. Traditionally, it has been a widely held belief that conventional vehicles outperform AFVs, especially on the highway. However, I wanted to delve into the data and confirm if this notion holds true, and if not, understand the implications of any deviations from this expectation.
+
+I collected data on various vehicle categories, fuel types, and their respective average fuel economy in both highway and city conditions. To quantify the variance between these two metrics, I calculated the difference between the average highway and city fuel economy values for each category and fuel type combination.
+
+![](/images/img9.jpg)
+
+<b>Findings:</b>
+
+AFVs, particularly Sedans/Wagons and SUVs, exhibit higher fuel economy in city conditions than on the highway. This counterintuitive trend challenges the conventional wisdom that highway driving is more fuel-efficient. The rise in electric and hybrid AFVs equipped with regenerative braking systems may explain this phenomenon. These technologies recover energy during city driving, such as slowing down or braking, which isn't as prevalent on highways. This regenerative energy can significantly improve city fuel economy. AFVs could be capitalizing on stop-and-go traffic scenarios, which are common in urban environments. Electric and hybrid AFVs are more efficient during these frequent stops and accelerations than traditional internal combustion engines. The findings are promising for the future of AFVs. As cities globally implement stricter emissions regulations and aim for cleaner transportation, AFVs' superior city performance could position them as the preferred choice for urban commuters. Better city fuel economy in AFVs contributes to reduced emissions in urban areas, which often struggle with air quality issues. This aligns with global efforts to combat climate change and enhance urban sustainability.
+
+<b>Future Prospects:</b>
+
+As automakers continue to innovate and refine AFV technologies, I anticipate even more significant improvements in city fuel economy. This could accelerate the adoption of AFVs and pave the way for cleaner, greener urban transportation. In conclusion, my analysis reveals a surprising advantage for AFVs in city fuel economy compared to conventional vehicles. This finding reinforces the potential of AFVs in urban environments and underscores their role in a cleaner, more sustainable transportation future.
