@@ -1,23 +1,26 @@
--- checking the number of records in the table 
-select *
-from afvus;
+/* 1 - Data Overview
+Starting out by checking the number of records in the table 
+*/
+SELECT *
+FROM afvus;
 
--- This query retrieves the name of the first column in the 'afvus' table
--- This is necessary because one of the columns did not get its name transferred over properly during the CSV to SQL import
--- So checking its name so I can rename it with the proper column name
+/* 2 - Data Cleanup
+The query below retrieves the name of the first column in the 'afvus' table.
+This is necessary because one of the columns did not get its name transferred over properly during the CSV to SQL import
+So checking its name so I can rename it with the proper column name
+*/
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'afvus'
 AND ORDINAL_POSITION = 1;
 
-
--- Query below renames the column 'ï»¿Category' to 'Category'
--- This is done to correct the column name, which did not get imported properly during the data import process
+-- Rename the misnamed column to 'Category'
 ALTER TABLE afvus
 RENAME COLUMN ï»¿Category TO Category;
 
-
+/* 3 - Manufacturer Analysis
 -- First looking at the distribution of cars by manufacturer
+*/
 SELECT
     Manufacturer,
     Fuel,
@@ -30,8 +33,10 @@ ORDER BY
     VehicleCount DESC;  -- Sort by number of vehicles  in descending order
     
 
--- Now calculating the frequency of cars categorized by their fuel type and presenting the results
--- in descending order of frequency. This would provide insights into which fuel types are most prevalent in the dataset.
+/* 4 - Fuel Type Analysis
+Now calculating the frequency of cars categorized by their fuel type and presenting the results
+in descending order of frequency. This would provide insights into which fuel types are most prevalent in the dataset.
+*/
 SELECT
     Fuel,
     Category,
@@ -44,13 +49,9 @@ ORDER BY
     Frequency DESC;         -- Sort the results by frequency in descending order
     
     
-    
-
--- Fuel Economy Analysis for Conventional Vehicles --
-
-
--- Calculate and compare the average conventional fuel economy combined for different vehicle manufacturers.
-
+/* 5 - Conventional Vehicles Fuel Economy Analysis 
+Purpose is to calculate and compare the average conventional fuel economy combined for different vehicle manufacturers.
+*/
 SELECT
 	Manufacturer,
 	AVG(`ConventionalFuelEconomyCombined`) AS AvgFuelEconomy
@@ -91,10 +92,10 @@ GROUP BY
 ORDER BY
     AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
     
--- Fuel Economy Analysis for Alternative Fuel Vehicles --
-
-
--- Calculate and compare the average alternative fuel economy combined for different vehicle manufacturers.
+    
+/* 6 - Alternative Fuel Vehicles - Fuel Economy Analysis 
+Purpose is to calculate and compare the average alternative fuel economy combined for different vehicle manufacturers.
+*/
 SELECT
     Manufacturer,   
     AVG(`AlternativeFuelEconomyCombined`) AS AvgAlternativeFuelEconomy  -- Calculate the average fuel economy
@@ -134,7 +135,10 @@ ConventionalFuelEconomy AS (
         Manufacturer
 )
 
--- Combine the results from both subqueries
+/* 7 - Combinining the Fuel Economies
+This query performs an analysis of the average alternative fuel economy and average conventional fuel economy
+ by manufacturer, with the purpose of comparing these two types of fuel economies. 
+*/
 SELECT
     Manufacturer,
     AVG(AvgAlternativeFuelEconomy) AS AvgAlternativeFuelEconomy,
@@ -204,7 +208,11 @@ ORDER BY
     AvgFuelEconomy DESC;  -- Sort the results by average fuel economy in descending order
 
 
--- Next, checking how  the all-electric range of EVs varies by manufacturer and model year
+/* 8 - Electric Range Analysis
+Checking how the all-electric range of EVs varies by manufacturer and model year
+This is crucial to gain insights into the capabilities and advancements in electric vehicle technology over time
+*/
+
 SELECT
     Manufacturer,
     ModelYear,
@@ -219,7 +227,7 @@ GROUP BY
 ORDER BY
     AvgElectricRange DESC;  -- Sort by average electric range in descending order
     
--- checking how  the all-electric range of EVs varies by the category (sedan/SUV/pickup)
+-- Checking how  the all-electric range of EVs varies by the category (sedan/SUV/pickup)
 SELECT
     Category,
     AVG(`All-ElectricRange`) AS AvgElectricRange
@@ -266,10 +274,12 @@ WHERE
     AND (
         `All-ElectricRange` IS NOT NULL
     );
-    
+
+/* 9 - Engine Analysis
 -- Next, analyzing how engine types and sizes vary for alternative fuel (AFV) vehicles within each manufacturer's lineup 
--- and across different vehicle categories. This can help identify any patterns or differences in engine specifications 
--- among the top manufacturers.    
+and across different vehicle categories. This can help identify any patterns or differences in engine specifications 
+among the top manufacturers.    
+*/
     
 -- Select and categorize vehicles as either EV or AFV based on their fuel type
 SELECT
@@ -299,15 +309,12 @@ ORDER BY
     Avg_Engine_Size DESC;
    
 
-/*
+/* 10 - Fuel Economy Variance Analysis
    Next, performing a variance analysis to compare the fuel economy (miles per gallon) of Alternative Fuel Vehicles (AFVs) and Conventional Fuel Vehicles (CFVs) in both city and highway driving conditions. 
    The goal is to assess whether AFVs exhibit different patterns in fuel economy between city and highway driving, 
    and to gain insights into their efficiency in these scenarios.
-
-   Query Explanation:
-   - I calculate the average fuel economy for AFVs and CFVs separately for city and highway driving conditions.
-   - I use the 'CASE' statement to categorize each row as either 'City' or 'Highway' for easy comparison.
-   - The results will allow me to understand any disparities in fuel economy between AFVs and CFVs in various driving scenarios.
+	I calculated the average fuel economy for AFVs and CFVs separately for city and highway driving conditions.
+    The results allowed me to understand any disparities in fuel economy between AFVs and CFVs in various driving scenarios.
 */   
    
 -- Calculate variance for Alternative Fuel vehicles by Category
