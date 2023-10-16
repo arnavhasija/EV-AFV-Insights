@@ -99,7 +99,7 @@ Objective: Visualize key findings and insights by connecting the SQL database to
 Actions:
 - Establish a connection between the SQL database and Tableau for seamless data integration
 - Design and develop interactive visualizations that effectively represent the project's discoveries
-- Create comprehensive dashboards to provide a user-friendly overview of the EV and AFV market
+- Create dashboards to provide a user-friendly overview of the EV and AFV market
 
 <b>Interpretation and Insights:</b>
 
@@ -152,7 +152,7 @@ The boxplot below provides an overview of the all-electric range distribution fo
 
 - Lastly, Volvo's lower placement in the all-electric range hierarchy can be attributed to the dominance of plug-in hybrid electric vehicles, constituting 80% of their dataset entries. Notably, the C40 Recharge Twin model exhibits an outlier with an all-electric range of 226 miles. Most data points within the interquartile range belong to plug-in hybrid electric vehicles, with examples like the XC60 T8 AWD Recharge ext. Range SUV boasting ranges of up to 560 miles.
 
-The boxplots not only showcase the all-electric range diversity among manufacturers but also underscore the impact of plug-in hybrid electric vehicles on the overall range distribution. It offers a comprehensive visual representation of the EV landscape, enabling us to identify outliers, trends, and the varying approaches taken by manufacturers in the pursuit of sustainable mobility.
+The boxplots not only showcase the all-electric range diversity among manufacturers but also underscore the impact of plug-in hybrid electric vehicles on the overall range distribution. It offers a visual representation of the EV landscape, enabling us to identify outliers, trends, and the varying approaches taken by manufacturers in the pursuit of sustainable mobility.
 
 
 <h3>Alternative vs Conventional - Fuel Economy Analysis</h3>
@@ -191,4 +191,14 @@ AFVs, particularly Sedans/Wagons and SUVs, exhibit higher fuel economy in city c
 
 <b>Future Prospects:</b>
 
-As automakers continue to innovate and refine AFV technologies, I anticipate even more significant improvements in city fuel economy. This could accelerate the adoption of AFVs and pave the way for cleaner, greener urban transportation. In conclusion, my analysis reveals a surprising advantage for AFVs in city fuel economy compared to conventional vehicles. This finding reinforces the potential of AFVs in urban environments and underscores their role in a cleaner, more sustainable transportation future.
+As automakers continue to innovate and refine AFV technologies, I anticipate even more significant improvements in city fuel economy. This could accelerate the adoption of AFVs and pave the way for cleaner, greener urban transportation. Therefore, this analysis reveals a surprising advantage for AFVs in city fuel economy compared to conventional vehicles. This finding reinforces the potential of AFVs in urban environments and underscores their role in a cleaner, more sustainable transportation future.
+
+<h3>Conclusion</h3>
+
+Over the course of this project, I embarked on a comprehensive analysis of the Alternative Fuel Vehicles (AFVs) dataset, diving deep into various aspects of fuel economy, vehicle categories, and manufacturers. The journey began with data exploration, verification, and standardization. It was essential to ensure data accuracy and consistency, especially given the dataset's wide range of information sources. My analysis unveiled some intriguing insights into the world of AFVs and Conventional Fuel Vehicles (CFVs). I explored the prevalence of different fuel types among manufacturers, with a focus on the most common categories and the frequency of each fuel type. Next, I delved into the realm of fuel economy. I compared the average fuel economy for both AFVs and CFVs, investigating patterns based on manufacturers, vehicle categories, and fuel types. This uncovered that AFVs showcased a distinct fuel efficiency profile, underscoring their potential to be more environmentally friendly.
+
+The investigation extended to examine engine types and sizes, providing a clearer picture of the engine specifications across top manufacturers, and reaffirming the diverse offerings in the market. An intriguing finding was the variance in fuel economy for AFVs between city and highway conditions. It was especially noteworthy that AFVs demonstrated better city fuel economy compared to conventional vehicles. This suggests a different pattern in the energy efficiency of these vehicles, challenging conventional wisdom and indicating a potential area for innovation and optimization.
+
+In conclusion, this project has delivered a rich array of insights into AFVs, spanning from fuel economy comparisons to electric range analysis and engine specification variances. The data, visualizations, and analysis outcomes collectively contribute to a clearer understanding of the world of alternative fuel vehicles. The findings could certainly add value to the broader conversation around the adoption of AFVs, highlighting their unique advantages and potential areas for further exploration. As the world continues its journey towards sustainable and environmentally conscious transportation, these insights can serve as valuable signposts for researchers, manufacturers, and policymakers alike.
+
+As I conclude this project, it's evident that alternative fuel vehicles are more than just a choice; they are a possibility, an opportunity, and a step towards a cleaner and more sustainable future. This analysis provides a glimpse into the road ahead, where innovation and improvement will continue to shape the landscape of alternative fuel vehicles.
